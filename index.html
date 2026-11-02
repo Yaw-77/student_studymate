@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate – Student Study Planner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="brand">
+            <span class="brand-icon">📚</span>
+            <div>
+                <h1>StudyMate</h1>
+                <p class="tagline">Student Study Planner</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Statistics Cards -->
+        <section class="stats-grid" aria-label="Task statistics">
+            <div class="stat-card">
+                <span class="stat-value" id="totalTasks">0</span>
+                <span class="stat-label">Total Tasks</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="completedTasks">0</span>
+                <span class="stat-label">Completed</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="pendingTasks">0</span>
+                <span class="stat-label">Pending</span>
+            </div>
+        </section>
+
+        <!-- Add Task Form -->
+        <section class="card form-card">
+            <h2>Add New Task</h2>
+            <form id="taskForm" novalidate>
+                <div class="form-group">
+                    <label for="taskTitle">Task Title <span class="required">*</span></label>
+                    <input type="text" id="taskTitle" name="taskTitle" placeholder="e.g. Complete math assignment" required>
+                    <span class="error-message" id="titleError" role="alert"></span>
+                </div>
+                <div class="form-group">
+                    <label for="taskSubject">Subject / Course</label>
+                    <input type="text" id="taskSubject" name="taskSubject" placeholder="e.g. Mathematics">
+                </div>
+                <div class="form-group">
+                    <label for="taskPriority">Priority</label>
+                    <select id="taskPriority" name="taskPriority">
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </form>
+        </section>
+
+        <!-- Filter Controls -->
+        <section class="filter-bar" aria-label="Task filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </section>
+
+        <!-- Task List -->
+        <section class="task-list" id="taskList" aria-live="polite"></section>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+            <div class="empty-icon">📝</div>
+            <p>No study tasks yet. Add your first task to get started.</p>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <p>&copy; 2026 StudyMate – Accra Technical University Virtual Internship</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
